@@ -4,25 +4,24 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.util.Date;
-import java.util.Objects;
 
 public class Spittle {
     private final Long id;
     private final String message;
     private final Date time;
     private Double latitude;
-    private Double longtitude;
+    private Double longitude;
 
-    public Spittle(String message, Date time, Double latitude, Double longtitude) {
-        this.id = null;
+    public Spittle(Long id,String message, Date time, Double latitude, Double longitude) {
+        this.id = id;
         this.message = message;
         this.time = time;
         this.latitude = latitude;
-        this.longtitude = longtitude;
+        this.longitude = longitude;
     }
 
     public Spittle(String message, Date time) {
-        this(message, time,null,null);
+        this(null,message, time,null,null);
     }
 
     public Long getId() {
@@ -45,12 +44,12 @@ public class Spittle {
         this.latitude = latitude;
     }
 
-    public Double getLongtitude() {
-        return longtitude;
+    public Double getLongitude() {
+        return longitude;
     }
 
-    public void setLongtitude(Double longtitude) {
-        this.longtitude = longtitude;
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     @Override
